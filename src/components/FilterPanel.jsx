@@ -1,88 +1,66 @@
+import { useState } from 'react'
 import { PIN_CONFIG } from '../data/pins'
+
 export default function FilterPanel({ filterActive, toggleFilter, counts }) {
+	const [isOpen, setIsOpen] = useState(false)
+
 	return (
-		<div
-			style={{
-				position: 'absolute',
-				top: 16,
-				left: 16,
-				zIndex: 50,
-				background: 'rgba(10,20,10,0.92)',
-				backdropFilter: 'blur(12px)',
-				border: '1px solid rgba(34,197,94,0.2)',
-				borderRadius: 12,
-				padding: '12px 14px',
-				display: 'flex',
-				flexDirection: 'column',
-				gap: 8,
-				minWidth: 170
-			}}
-		>
-			<div
-				style={{
-					fontSize: 10,
-					fontWeight: 700,
-					color: 'rgba(134,239,172,0.6)',
-					letterSpacing: '0.12em',
-					marginBottom: 2
-				}}
+		<>
+			{/* BOTÃO (fica sempre visível no mobile) */}
+			<button
+				onClick={() => setIsOpen(!isOpen)}
+				className="absolute top-4 left-4 z-50 bg-green-600 text-white px-3 py-2 rounded-lg md:hidden"
 			>
-				FILTRAR PONTOS
+				Filtros {isOpen ? ' ▲ ' : ' ▼ '}
+			</button>
+
+			{/* PAINEL */}
+			<div
+				className={`
+				absolute top-16 left-4 z-50
+				bg-[rgba(10,20,10,0.92)] backdrop-blur-md
+				border border-green-500/20 rounded-xl p-3 flex flex-col gap-2 min-w-[170px]
+				${isOpen ? 'flex' : 'hidden'} md:flex
+				`}
+			>
+				<div className="text-[10px] font-bold text-green-200/60 tracking-wider mb-1">
+					FILTRAR PONTOS
+				</div>
+
+				{Object.entries(PIN_CONFIG).map(([type, cfg]) => (
+					<button
+						key={type}
+						onClick={() => toggleFilter(type)}
+						className={`
+						flex items-center gap-2 px-2 py-1 rounded-lg transition
+						${
+							filterActive[type]
+								? 'bg-green-500/10 border border-green-500/30 opacity-100'
+								: 'opacity-40'
+						}
+						`}
+					>
+						<div
+							className="w-[10px] h-[10px] rounded-[50%_50%_50%_0] rotate-[-45deg]"
+							style={{ background: cfg.color }}
+						/>
+
+						<span className="text-xs text-white flex-1 text-left">
+							{cfg.label}
+						</span>
+
+						<span
+							className="text-[11px] font-semibold rounded-full px-2"
+							style={{
+								color: cfg.color,
+								background: `${cfg.color}22`
+							}}
+						>
+							{counts[type]}
+						</span>
+					</button>
+				))}
 			</div>
-			{Object.entries(PIN_CONFIG).map(([type, cfg]) => (
-				<button
-					key={type}
-					onClick={() => toggleFilter(type)}
-					style={{
-						display: 'flex',
-						alignItems: 'center',
-						gap: 9,
-						background: filterActive[type]
-							? 'rgba(34,197,94,0.08)'
-							: 'transparent',
-						border: `1px solid ${filterActive[type] ? 'rgba(34,197,94,0.3)' : 'transparent'}`,
-						borderRadius: 8,
-						padding: '6px 10px',
-						cursor: 'pointer',
-						opacity: filterActive[type] ? 1 : 0.4,
-						transition: 'all 0.2s'
-					}}
-				>
-					<div
-						style={{
-							width: 10,
-							height: 10,
-							borderRadius: '50% 50% 50% 0',
-							transform: 'rotate(-45deg)',
-							background: cfg.color,
-							flexShrink: 0
-						}}
-					/>
-					<span
-						style={{
-							fontSize: 12,
-							color: '#e8f5e8',
-							fontFamily: "'DM Sans', sans-serif",
-							flex: 1,
-							textAlign: 'left'
-						}}
-					>
-						{cfg.label}
-					</span>
-					<span
-						style={{
-							fontSize: 11,
-							fontWeight: 600,
-							color: cfg.color,
-							background: `${cfg.color}22`,
-							borderRadius: 99,
-							padding: '1px 7px'
-						}}
-					>
-						{counts[type]}
-					</span>
-				</button>
-			))}
-		</div>
+		</>
 	)
 }
