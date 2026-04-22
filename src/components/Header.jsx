@@ -1,171 +1,68 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 export default function Header({ onDenunciaClick }) {
-	const styles = {
-		header: {
-			display: 'flex',
-			alignItems: 'center',
-			justifyContent: 'space-between',
-			padding: '0 16px',
-			height: 60,
-			background: 'rgba(10,20,10,0.95)',
-			borderBottom: '1px solid rgba(34,197,94,0.2)',
-			position: 'relative',
-			zIndex: 100
-		},
-
-		logoContainer: {
-			display: 'flex',
-			alignItems: 'center',
-			gap: 10
-		},
-
-		logoIcon: {
-			width: 32,
-			height: 32,
-			borderRadius: 8,
-			background: 'linear-gradient(135deg,#22c55e,#16a34a)',
-			display: 'flex',
-			alignItems: 'center',
-			justifyContent: 'center',
-			fontSize: 18
-		},
-
-		logoText: {
-			fontSize: 16,
-			fontWeight: 800,
-			color: '#f0fdf4'
-		},
-
-		logoSub: {
-			fontSize: 10,
-			color: 'rgba(134,239,172,0.7)'
-		},
-
-		nav: {
-			display: 'flex',
-			alignItems: 'center',
-			gap: 8
-		},
-
-		navButton: {
-			background: 'none',
-			border: 'none',
-			color: 'rgba(134,239,172,0.8)',
-			cursor: 'pointer'
-		},
-
-		cta: {
-			background: '#22c55e',
-			border: 'none',
-			padding: '8px 16px',
-			borderRadius: 8,
-			cursor: 'pointer'
-		},
-
-		menuButton: {
-			background: 'none',
-			border: 'none',
-			fontSize: 22,
-			color: '#22c55e',
-			cursor: 'pointer'
-		},
-
-		mobileMenu: {
-			position: 'absolute',
-			top: 60,
-			right: 10,
-			background: '#0f1a0f',
-			border: '1px solid rgba(34,197,94,0.2)',
-			borderRadius: 10,
-			padding: 12,
-			display: 'flex',
-			flexDirection: 'column',
-			gap: 8,
-			minWidth: 180
-		},
-
-		mobileItem: {
-			background: 'none',
-			border: 'none',
-			color: '#e8f5e8',
-			textAlign: 'left',
-			padding: '6px 8px',
-			cursor: 'pointer'
-		},
-
-		mobileCTA: {
-			background: '#22c55e',
-			border: 'none',
-			padding: '8px',
-			borderRadius: 6,
-			cursor: 'pointer'
-		}
-	}
 	const [menuOpen, setMenuOpen] = useState(false)
-	const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
-
-	useEffect(() => {
-		const handleResize = () => {
-			setIsMobile(window.innerWidth < 768)
-		}
-		window.addEventListener('resize', handleResize)
-		return () => window.removeEventListener('resize', handleResize)
-	}, [])
 
 	return (
-		<header style={styles.header}>
+		<header className="flex items-center justify-between px-4 h-[60px] bg-[rgba(10,20,10,0.95)] border-b border-[rgba(34,197,94,0.2)] relative z-[100]">
 			{/* LOGO */}
-			<div style={styles.logoContainer}>
-				<div style={styles.logoIcon}>🌿</div>
-				<div>
-					<div style={styles.logoText}>
-						Conquista <span style={{ color: '#22c55e' }}>Limpa</span>
+			<div className="flex items-center gap-2.5 md:flex-none flex-1 md:flex-initial justify-center md:justify-start">
+				<div className="hidden w-8 h-8 rounded-lg bg-gradient-to-br from-[#22c55e] to-[#16a34a] md:flex items-center justify-center text-lg">
+					🌿
+				</div>
+				<div className="flex flex-col leading-[1.1]">
+					<div className="text-base font-extrabold text-[#f0fdf4] ">
+						Conquista <span className="text-[#22c55e]">Limpa</span>
 					</div>
-					<div style={styles.logoSub}>VITÓRIA DA CONQUISTA</div>
+					<div className="text-[10px] text-[rgba(134,239,172,0.7)]">
+						VITÓRIA DA CONQUISTA
+					</div>
 				</div>
 			</div>
 
 			{/* DESKTOP NAV */}
-			{!isMobile && (
-				<nav style={styles.nav}>
-					{['Início', 'Como funciona', 'Parceiros'].map(item => (
-						<button key={item} style={styles.navButton}>
-							{item}
-						</button>
-					))}
-
-					<button onClick={() => onDenunciaClick(true)} style={styles.cta}>
-						📢 Fazer denúncia
+			<nav className="hidden md:flex items-center gap-2">
+				{['Início', 'Como funciona', 'Parceiros'].map(item => (
+					<button
+						key={item}
+						className="bg-transparent border-none text-[rgba(134,239,172,0.8)] cursor-pointer px-3 py-1.5 hover:text-[#22c55e] transition-colors"
+					>
+						{item}
 					</button>
-				</nav>
-			)}
+				))}
+				<button
+					onClick={() => onDenunciaClick(true)}
+					className="bg-[#22c55e] border-none px-4 py-2 rounded-lg cursor-pointer font-bold text-[#052e16] hover:bg-[#16a34a] transition-colors"
+				>
+					📢 Fazer denúncia
+				</button>
+			</nav>
 
 			{/* MOBILE MENU BUTTON */}
-			{isMobile && (
-				<button
-					onClick={() => setMenuOpen(!menuOpen)}
-					style={styles.menuButton}
-				>
-					☰
-				</button>
-			)}
+			<button
+				onClick={() => setMenuOpen(!menuOpen)}
+				className="md:hidden bg-transparent border-none text-[#22c55e] cursor-pointer text-2xl"
+			>
+				{menuOpen ? '✕' : '☰'}
+			</button>
 
 			{/* MOBILE DROPDOWN */}
-			{isMobile && menuOpen && (
-				<div style={styles.mobileMenu}>
+			{menuOpen && (
+				<div className="md:hidden absolute top-[60px] right-2.5 bg-[#0f1a0f] border border-[rgba(34,197,94,0.2)] rounded-xl p-3 flex flex-col gap-2 min-w-[180px] z-50">
 					{['Início', 'Como funciona', 'Parceiros'].map(item => (
-						<button key={item} style={styles.mobileItem}>
+						<button
+							key={item}
+							className="bg-transparent border-none text-[#e8f5e8] text-left px-2 py-1.5 cursor-pointer hover:text-[#22c55e] transition-colors"
+						>
 							{item}
 						</button>
 					))}
-
 					<button
 						onClick={() => {
 							onDenunciaClick(true)
 							setMenuOpen(false)
 						}}
-						style={styles.mobileCTA}
+						className="bg-[#22c55e] border-none p-2 rounded-md cursor-pointer font-bold text-[#052e16] hover:bg-[#16a34a] transition-colors"
 					>
 						📢 Fazer denúncia
 					</button>
