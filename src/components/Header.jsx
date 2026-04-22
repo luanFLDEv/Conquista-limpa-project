@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Modal from './Modal'
+import Modal from './Modal1'
 import ComoFunciona from './ComoFunciona'
 
 export default function Header({ onDenunciaClick }) {
