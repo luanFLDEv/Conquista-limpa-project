@@ -1,19 +1,19 @@
 export default function Footer() {
 	return (
 		<footer
-			style={{
-				background: 'rgba(5,10,5,0.98)',
-				borderTop: '1px solid rgba(34,197,94,0.15)',
-				padding: '16px',
-				display: 'flex',
-				flexDirection: window.innerWidth < 768 ? 'column' : 'row',
-				alignItems: 'center',
-				justifyContent: 'space-between',
-				gap: 12,
-				textAlign: 'center',
-				flexShrink: 0,
-				zIndex: 100
-			}}
+			className="
+	bg-[rgba(5,10,5,0.98)]
+	border-t border-[rgba(34,197,94,0.15)]
+	p-4
+	flex-col md:flex
+	md:flex-row
+	items-center
+	justify-between
+	gap-3
+	text-center
+	flex-shrink-0
+	z-[100]
+"
 		>
 			{/* Parte esquerda */}
 			<div

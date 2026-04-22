@@ -1,7 +1,7 @@
 import { PIN_CONFIG } from '../data/pins'
 export default function StarBar({ counts }) {
 	return (
-		<div className="flex absolute bottom-4 left-1/2 transform -translate-x-1/2 z-50 bg-[#0a140aeb] backdrop-blur-md border border-[#22c55e26] rounded-full px-5 py-2  gap-0 whitespace-nowrap">
+		<div className="hidden md:flex absolute bottom-4 left-1/2 transform -translate-x-1/2 z-50 bg-[#0a140aeb] backdrop-blur-md border border-[#22c55e26] rounded-full px-5 py-2  gap-0 whitespace-nowrap">
 			{Object.entries(PIN_CONFIG).map(([type, cfg], i) => (
 				<div
 					key={type}
