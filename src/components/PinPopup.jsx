@@ -1,92 +1,48 @@
 import { PIN_CONFIG } from '../data/pins'
+
 export default function PinPopup({ selectedPin, onClose }) {
+	const cfg = PIN_CONFIG[selectedPin.type]
+
 	return (
 		<div
+			className="absolute bottom-24 left-1/2 -translate-x-1/2 z-50 w-[280px] rounded-2xl overflow-hidden"
 			style={{
-				position: 'absolute',
-				bottom: 100,
-				left: '50%',
-				transform: 'translateX(-50%)',
-				zIndex: 50,
 				background: 'rgba(10,20,10,0.96)',
-				backdropFilter: 'blur(16px)',
-				border: `1px solid ${PIN_CONFIG[selectedPin.type].color}44`,
-				borderRadius: 14,
-				padding: '14px 18px',
-				minWidth: 260,
-				maxWidth: 320,
-				boxShadow: `0 4px 24px ${PIN_CONFIG[selectedPin.type].color}22`
+				border: `1px solid ${cfg.color}44`,
+				boxShadow: `0 4px 24px ${cfg.color}22`
 			}}
 		>
 			<button
-				onClick={() => onClose(null)}
-				style={{
-					position: 'absolute',
-					top: 8,
-					right: 10,
-					background: 'none',
-					border: 'none',
-					color: 'rgba(134,239,172,0.5)',
-					fontSize: 18,
-					cursor: 'pointer',
-					lineHeight: 1
-				}}
+				onClick={onClose}
+				className="absolute top-2 right-3 bg-transparent border-none text-[rgba(134,239,172,0.5)] text-lg cursor-pointer z-10"
 			>
 				×
 			</button>
 
-			<div
-				style={{
-					display: 'flex',
-					alignItems: 'center',
-					gap: 8,
-					marginBottom: 8
-				}}
-			>
-				{selectedPin.image && (
-					<img
-						src={selectedPin.image}
-						alt={selectedPin.title}
-						style={{
-							width: '100%',
-							height: 140,
-							objectFit: 'cover',
-							borderRadius: 10,
-							marginBottom: 10
-						}}
-					/>
-				)}
+			{selectedPin.image && (
+				<img
+					src={selectedPin.image}
+					alt={selectedPin.title}
+					className="w-full h-[140px] object-cover"
+				/>
+			)}
 
-				<div>
-					<div style={{ fontSize: 14, fontWeight: 700, color: '#f0fdf4' }}>
+			<div className="p-4">
+				<div className="flex items-center gap-2 mb-2">
+					<span className="text-sm font-bold text-[#f0fdf4]">
 						{selectedPin.title}
-					</div>
-
+					</span>
 					<span
-						style={{
-							fontSize: 10,
-							padding: '2px 8px',
-							borderRadius: 99,
-							fontFamily: "'DM Sans', sans-serif",
-							background: PIN_CONFIG[selectedPin.type].bg,
-							color: PIN_CONFIG[selectedPin.type].text
-						}}
+						className="text-[10px] px-2 py-0.5 rounded-full"
+						style={{ background: cfg.bg, color: cfg.text }}
 					>
-						{PIN_CONFIG[selectedPin.type].label}
+						{cfg.label}
 					</span>
 				</div>
+				<p className="text-xs text-[rgba(134,239,172,0.75)] leading-relaxed">
+					{selectedPin.desc}
+				</p>
 			</div>
-			<p
-				style={{
-					fontSize: 12,
-					color: 'rgba(134,239,172,0.75)',
-					fontFamily: "'DM Sans', sans-serif",
-					lineHeight: 1.6,
-					margin: '0 0 10px'
-				}}
-			>
-				{selectedPin.desc}
-			</p>
 		</div>
 	)
 }

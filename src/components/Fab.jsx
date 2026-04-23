@@ -3,7 +3,7 @@ export default function Fab({ onClick }) {
 		<button
 			onClick={onClick}
 			className="
-        absolute bottom-14 left-1/2 -translate-x-1/2
+        absolute bottom-11 left-1/2 -translate-x-1/2
         sm:left-auto sm:right-4 sm:translate-x-0
         sm:w-13 sm:h-13 sm:rounded-full
         z-50 flex items-center justify-center gap-2
