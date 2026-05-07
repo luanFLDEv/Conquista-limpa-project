@@ -1,4 +1,4 @@
-import { WHATSAPP_NUMBER } from '../data/pins'
+import { WHATSAPP_NUMBER } from '../utils/constants'
 export default function DenunciaModal({ onClose }) {
 	const openWhatsApp = () => {
 		const msg = encodeURIComponent(
