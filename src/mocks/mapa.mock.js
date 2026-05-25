@@ -6,22 +6,22 @@ export const MARKERS_MOCK = [
   // ECOPONTOS - COOPERATIVA RECICLA CONQUISTA
   {
     id: "marker-001",
-    lat: -14.8542,
-    lng: -40.8416,
+    lat: -14.8705438,
+    lng: -40.8281299,
     tipo: "recycle",
     titulo: "Ecoponto 01 — Candeias",
     descricao:
       "Ponto de coleta seletiva operado pela Cooperativa Recicla Conquista. Lateral do estádio Lomanto Jr. Aceita: papel, plástico, vidro, metal.",
     status: "verificado",
     imagem: null,
-    endereco: "Rua São Luis, 717 — Candeiais",
+    endereco: "Rua São Luis, 717 — Candeias",
     telefone: null,
     fonte: "https://www.pmvc.ba.gov.br/coleta-seletiva/",
   },
   {
     id: "marker-002",
-    lat: -14.8679,
-    lng: -40.8512,
+    lat: -14.853272,
+    lng: -40.854968,
     tipo: "recycle",
     titulo: "Ecoponto 02 — Urbis 2",
     descricao:
@@ -34,8 +34,8 @@ export const MARKERS_MOCK = [
   },
   {
     id: "marker-003",
-    lat: -14.8752,
-    lng: -40.8341,
+    lat: -14.8630441,
+    lng: -40.8467437,
     tipo: "recycle",
     titulo: "Ecoponto 03 — Jurema",
     descricao:
@@ -48,15 +48,15 @@ export const MARKERS_MOCK = [
   },
   {
     id: "marker-004",
-    lat: -14.8965,
-    lng: -40.8234,
+    lat: -14.841036,
+    lng: -40.9224824,
     tipo: "recycle",
     titulo: "Galpão Cooperativa Recicla Conquista",
     descricao:
       "Sede operacional da Cooperativa Recicla Conquista. Triagem, classificação e prensagem de materiais. Visitas mediante agendamento.",
     status: "verificado",
     imagem: null,
-    endereco: "Rod. BA 262, km 08 — Distrito Pradoso (Aterro Sanitário)",
+    endereco: "Aterro Sanitário — Rod. BA 262, km 08 — Zabelê",
     telefone: null,
     fonte: "https://www.pmvc.ba.gov.br/coleta-seletiva/",
   },
@@ -64,8 +64,8 @@ export const MARKERS_MOCK = [
   // EMPRESAS DE RECICLAGEM
   {
     id: "marker-005",
-    lat: -14.8654,
-    lng: -40.8312,
+    lat: -14.8587847,
+    lng: -40.8586424,
     tipo: "descarte",
     titulo: "Conquista Reciclagem",
     descricao:
@@ -79,15 +79,15 @@ export const MARKERS_MOCK = [
   },
   {
     id: "marker-006",
-    lat: -14.8892,
-    lng: -40.8045,
+    lat: -14.8049778,
+    lng: -40.7830328,
     tipo: "descarte",
     titulo: "Conquista Reciclagem Indústria e Comércio",
     descricao:
-      "Centro de processamento de resíduos e reciclagem industrial. Especializada em metal e sucata.",
+      "Centro de processamento de resíduos e reciclagem industrial. Especializada em metal e sucata. Localizado no Distrito Industrial.",
     status: "verificado",
     imagem: null,
-    endereco: "Rod. BR-116, km 828 — Distrito Industrial",
+    endereco: "Rod. BR-116, Distrito Industrial",
     telefone: "(77) 4009-5810",
     fonte:
       "https://www.diariocidade.com/ba/vitoria-da-conquista/guia/conquista-reciclagem-industria-e-comercio-ltda-32513719000112/",
@@ -96,30 +96,30 @@ export const MARKERS_MOCK = [
   // PONTOS DE INTERESSE AMBIENTAL
   {
     id: "marker-007",
-    lat: -14.8567,
-    lng: -40.8634,
+    lat: -14.822712500000002,
+    lng: -40.8596305,
     tipo: "preservação",
     titulo: "Parque Municipal da Serra do Periperi",
     descricao:
       "Unidade de Conservação de Mata Atlântica com 1.300 hectares. Abriga a Reserva Florestal do Poço Escuro (17 hectares), nascentes do Rio Verruga e espécie de cacto endêmica ameaçada de extinção (Melocactus conoideus).",
     status: "verificado",
     imagem: null,
-    endereco: "Bairro Cruzeiro — Serra do Periperi",
+    endereco: "Nossa Sra. Aparecida — Serra do Periperi",
     telefone: null,
     fonte:
       "https://pt.wikipedia.org/wiki/Parque_Municipal_da_Serra_do_Periperi",
   },
   {
     id: "marker-008",
-    lat: -14.8612,
-    lng: -40.8742,
+    lat: -14.835916500000002,
+    lng: -40.8283157,
     tipo: "preservação",
     titulo: "Cristo de Mário Cravo — Serra do Periperi",
     descricao:
-      "Monumento em homenagem à fé e ao povo nordestino. Localizado no alto da Serra do Periperi. Ponto turístico e simbólico da preservação ambiental.",
+      "Monumento maior cristo crucificado do mundo. Localizado no alto da Serra do Periperi. Ponto turístico com vista panorâmica da cidade. Aberto 24h.",
     status: "verificado",
     imagem: null,
-    endereco: "Alto da Serra do Periperi — Cruzeiro",
+    endereco: "Bairro Cruzeiro — Serra do Periperi",
     telefone: null,
     fonte:
       "https://www.ibahia.com/interior-da-bahia/vitoria-da-conquista/5-lugares-em-vitoria-da-conquista-que-voce-precisa-conhecer-322982",
@@ -128,30 +128,30 @@ export const MARKERS_MOCK = [
   // INSTITUIÇÕES EDUCACIONAIS COM PESQUISA AMBIENTAL
   {
     id: "marker-009",
-    lat: -14.8234,
-    lng: -40.8127,
+    lat: -14.8910702999999,
+    lng: -40.8043173,
     tipo: "ong",
     titulo: "UESB — Campus Vitória da Conquista",
     descricao:
-      "Universidade Estadual do Sudoeste da Bahia. Oferece cursos de Engenharia Florestal, Biologia e pesquisa em sustentabilidade. Laboratórios de pesquisa ambiental.",
+      "Universidade Estadual do Sudoeste da Bahia. Oferece cursos de Engenharia Florestal, Ciências Biológicas e pesquisa em sustentabilidade. Laboratórios de pesquisa ambiental.",
     status: "verificado",
     imagem: null,
-    endereco: "Estrada do Bem Querer, km 4 — Bairro Universitário",
+    endereco: "Estrada Bem Querer, Km 4 — Candeias",
     telefone: "(77) 3424-8600",
     fonte: "https://www.uesb.br/nossos-campi/vitoria-da-conquista/",
   },
   {
     id: "marker-010",
-    lat: -14.8145,
-    lng: -40.8234,
+    lat: -14.841860700000002,
+    lng: -40.8771349,
     tipo: "ong",
     titulo: "IFBA — Campus Vitória da Conquista",
     descricao:
       "Instituto Federal da Bahia. Oferece educação técnica e superior com foco em sustentabilidade. Realiza eventos de educação ambiental e semanas temáticas.",
     status: "verificado",
     imagem: null,
-    endereco: "Vitória da Conquista, BA",
-    telefone: null,
+    endereco: "Av. Sérgio Vieira de Melo, 3150 — Zabelê",
+    telefone: "(77) 3426-4210",
     fonte: "https://portal.ifba.edu.br/galeria-de-fotos/folder-3/folder-12",
   },
 
@@ -173,15 +173,15 @@ export const MARKERS_MOCK = [
   },
   {
     id: "marker-012",
-    lat: -14.8567,
-    lng: -40.8412,
+    lat: -14.865,
+    lng: -40.838,
     tipo: "ong",
     titulo: "Secretaria Municipal de Meio Ambiente (SEMMA)",
     descricao:
       "Órgão responsável por políticas ambientais municipais. Realiza ações de educação ambiental, coleta seletiva, reflorestamento e preservação de áreas verdes.",
     status: "verificado",
     imagem: null,
-    endereco: "Av. Brumado, s/n — Centro",
+    endereco: "Av. Brumado — Centro",
     telefone: "(77) 3424-8600",
     fonte: "https://www.pmvc.ba.gov.br/",
   },
@@ -189,8 +189,8 @@ export const MARKERS_MOCK = [
   // ÁREAS DE INTERESSE AMBIENTAL
   {
     id: "marker-013",
-    lat: -14.8701,
-    lng: -40.8654,
+    lat: -14.8630441,
+    lng: -40.8467437,
     tipo: "preservação",
     titulo: "Riacho dos Quatis",
     descricao:
@@ -203,15 +203,15 @@ export const MARKERS_MOCK = [
   },
   {
     id: "marker-014",
-    lat: -14.8634,
-    lng: -40.8756,
+    lat: -14.822712500000002,
+    lng: -40.8596305,
     tipo: "preservação",
     titulo: "Poço Escuro — Reserva Florestal",
     descricao:
-      "Última mata densa urbana de grande porte (17 hectares). Localiza-se dentro da Serra do Periperi. Contém nascente do Rio Verruga, afluente do Rio Pardo.",
+      "Última mata densa urbana de grande porte (17 hectares). Localiza-se dentro do Parque da Serra do Periperi. Contém nascente do Rio Verruga, afluente do Rio Pardo.",
     status: "verificado",
     imagem: null,
-    endereco: "Serra do Periperi",
+    endereco: "Serra do Periperi — Nossa Sra. Aparecida",
     telefone: null,
     fonte:
       "https://pt.wikipedia.org/wiki/Parque_Municipal_da_Serra_do_Periperi",
