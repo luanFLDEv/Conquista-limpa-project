@@ -12,6 +12,7 @@ export function Navbar() {
 		{ name: 'Guia', path: '/#guia' },
 		{ name: 'Agenda', path: '/#agenda' },
 		{ name: 'Aprenda', path: '/#aprenda' },
+		{ name: 'Trocas', path: '/#trocas' },
 		{ name: 'Ajude', path: '/#ajude' }
 	]
 

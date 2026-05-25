@@ -4,6 +4,7 @@ export const ROUTES = {
 	GUIA: '/#guia',
 	AGENDA: '/#agenda',
 	APRENDA: '/#aprenda',
+	TROCAS: '/#trocas',
 	AJUDE: '/#ajude'
 }
 
